@@ -21,6 +21,6 @@ fn main(){
     println!("You guessed: {}", guess);
     print!("Please input your guess.");
     print!("test");
-    print!("test");
+    print!("test2");
 
 }
