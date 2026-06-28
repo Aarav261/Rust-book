@@ -1,12 +1,21 @@
 use std::io;
 use std::cmp::Ordering;
-
+#[path = "Shawdowing.rs"]
+mod shadowing;
+use crate::shadowing::shadowing;
 use rand::Rng;
-
+use std::fmt::Display;
+mod Loops;
+use crate::Loops::loops;
 
 fn main(){
-    println!("Guess the number!");
+
+    loops();
     
+    println!("Guess the number!");
+
+    let result = shadowing();
+    println!("Result: {}", result);
 
     let secret_number = rand::thread_rng().gen_range(1..=100); //u32 is the default type for numbers in Rust, so we don't need to specify it here
     println!("The secret number is: {}", secret_number);
@@ -36,10 +45,6 @@ fn main(){
     }
 }  
 
-Hello_world();
 }
 
 
-fn Hello_world() {
-    println!("Hello, world!");
-}
